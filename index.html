@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>بهاء اكاديمي| أساسيات الحاسوب -</title>
+    <title>بهاء اكاديمي | أساسيات الحاسوب </title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -26,7 +26,7 @@
             color: #e2e8f0;
         }
 
-        /* Glass Navbar - محسّن للجوال */
+        /* Glass Navbar */
         .glass-nav {
             position: sticky;
             top: 0;
@@ -116,7 +116,7 @@
             color: #facc15;
         }
 
-        /* Main layout - مرن للجوال */
+        /* Main layout */
         .platform {
             max-width: 1400px;
             margin: 1rem auto;
@@ -126,7 +126,7 @@
             position: relative;
         }
 
-        /* زر القائمة الجانبية للجوال */
+        /* Mobile menu button */
         .mobile-menu-btn {
             display: none;
             position: fixed;
@@ -148,7 +148,7 @@
             transform: scale(0.95);
         }
 
-        /* الشريط الجانبي - يظهر كقائمة منسدلة في الجوال */
+        /* Sidebar */
         .lessons-sidebar {
             flex: 1.2;
             min-width: 270px;
@@ -203,7 +203,7 @@
         }
         .lesson-btn.active i { color: white; }
 
-        /* المحتوى الرئيسي */
+        /* Main content */
         .content-card {
             flex: 3;
             background: rgba(255, 255, 255, 0.9);
@@ -324,6 +324,82 @@
             margin-top: 12px;
             text-align: center;
         }
+
+        /* ===== قسم تواصل معنا ===== */
+        .contact-section {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(59,130,246,0.3);
+        }
+        .contact-card {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(124,58,237,0.1));
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(124,58,237,0.15));
+        }
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #25D366;
+            margin-bottom: 0.8rem;
+        }
+        .contact-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        body.dark .contact-card h4 {
+            color: #facc15;
+        }
+        .contact-number {
+            font-size: 1.4rem;
+            font-weight: 800;
+            direction: ltr;
+            display: inline-block;
+            background: #1e293b;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            margin: 0.8rem 0;
+            letter-spacing: 1px;
+        }
+        body.dark .contact-number {
+            background: #0f172a;
+            color: #25D366;
+        }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+            box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+        .whatsapp-btn i {
+            font-size: 1.2rem;
+        }
+        .contact-note {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.8rem;
+        }
+
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -331,7 +407,7 @@
             color: #64748b;
         }
 
-        /* استعلامات الوسائط للجوال */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-container {
                 padding: 0.6rem 1rem;
@@ -409,6 +485,14 @@
             .overlay.active {
                 display: block;
             }
+            .contact-number {
+                font-size: 1.1rem;
+                padding: 0.2rem 0.8rem;
+            }
+            .whatsapp-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -428,6 +512,12 @@
             .lesson-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+            .contact-card {
+                padding: 1rem;
+            }
+            .contact-icon {
+                font-size: 2rem;
             }
         }
     </style>
@@ -474,8 +564,30 @@
             <button id="nextBtn" class="nav-btn nav-btn-primary">التالي <i class="fas fa-arrow-left"></i></button>
         </div>
         <div class="shortcut-hint"><i class="fas fa-keyboard"></i> اضغط ← → للتنقل</div>
+
+        <!-- ===== قسم تواصل معنا ===== -->
+        <div class="contact-section">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h4>تواصل معنا</h4>
+                <p>لديك استفسار؟ نرحب بك للتواصل عبر الواتساب</p>
+                <div class="contact-number">
+                    <i class="fab fa-whatsapp" style="font-size: 1rem; margin-left: 5px;"></i>
+                    +963 982 520 358
+                </div>
+                <a href="https://wa.me/963982520358" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> أرسل رسالة مباشرة
+                </a>
+                <div class="contact-note">
+                    <i class="fas fa-clock"></i> رد خلال 24 ساعة
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 <footer>
     <i class="fas fa-laptop-code"></i> كورس أساسيات الحاسوب — تجربة متجاوبة بالكامل
 </footer>
