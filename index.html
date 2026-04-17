@@ -20,6 +20,7 @@
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
             color: #fff;
+            font-size: 18px;
         }
 
         @keyframes gradientBG {
@@ -39,20 +40,20 @@
 
         .header {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .header h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #fff, #f39c12);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .header h1 i {
@@ -65,16 +66,16 @@
 
         .header .sub {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
+            font-size: 1.1rem;
         }
 
         .developer {
             display: inline-block;
-            margin-top: 0.8rem;
-            padding: 0.3rem 1.2rem;
+            margin-top: 1rem;
+            padding: 0.4rem 1.5rem;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.95rem;
         }
 
         .developer span {
@@ -85,22 +86,22 @@
         .nav-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem;
+            gap: 1.2rem;
+            margin: 2rem;
         }
 
         .nav-btn {
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 60px;
             font-family: 'Cairo', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -121,26 +122,26 @@
         .section {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 1.5rem 2rem;
+            padding: 1.5rem 1.5rem 2.5rem;
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             padding-right: 1rem;
-            border-right: 5px solid #f39c12;
+            border-right: 6px solid #f39c12;
             display: inline-block;
         }
 
         .section-title i {
-            margin-left: 10px;
+            margin-left: 12px;
             color: #f39c12;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 2rem;
         }
 
@@ -174,44 +175,44 @@
 
         .card-header {
             background: linear-gradient(135deg, rgba(243, 156, 18, 0.2), rgba(255, 255, 255, 0.05));
-            padding: 1.5rem 1.5rem;
+            padding: 1.8rem 1.5rem;
             position: relative;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .card-header i {
-            font-size: 2rem;
+            font-size: 2.3rem;
             position: absolute;
-            bottom: -18px;
+            bottom: -20px;
             left: 20px;
             background: #f39c12;
             color: #1a1a2e;
-            padding: 10px;
+            padding: 12px;
             border-radius: 50%;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
         .card-header h3 {
-            font-size: 1.2rem;
-            margin-right: 55px;
-            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
+            margin-right: 65px;
+            margin-bottom: 0.5rem;
             color: #fff;
         }
 
         .card-header .topic-number {
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             opacity: 0.7;
-            margin-right: 55px;
+            margin-right: 65px;
         }
 
         .card-body {
-            padding: 1.5rem 1.5rem 0.8rem;
+            padding: 1.8rem 1.5rem 1rem;
         }
 
         .card-body p {
             color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            font-size: 0.85rem;
+            line-height: 1.7;
+            font-size: 1rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -219,29 +220,33 @@
         }
 
         .card-footer {
-            padding: 0.8rem 1.5rem 1.2rem;
+            padding: 1rem 1.5rem 1.5rem;
             display: flex;
-            gap: 0.8rem;
+            gap: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 0.3rem;
+            margin-top: 0.5rem;
         }
 
         .btn-icon {
             flex: 1;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.7rem;
-            border-radius: 14px;
+            padding: 0.8rem;
+            border-radius: 16px;
             font-family: 'Cairo', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             color: #fff;
             font-weight: 500;
+        }
+
+        .btn-icon i {
+            font-size: 1.1rem;
         }
 
         .btn-icon:hover {
@@ -270,26 +275,26 @@
         .modal-content {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             min-height: 100vh;
-            padding: 2rem 1.5rem;
-            max-width: 900px;
+            padding: 2.5rem 2rem;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
         }
 
         .close-modal {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             background: #e74c3c;
             color: white;
-            width: 45px;
-            height: 45px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
             transition: all 0.3s;
             z-index: 2001;
@@ -302,48 +307,48 @@
         }
 
         .modal-title {
-            font-size: 1.6rem;
+            font-size: 2rem;
             color: #f39c12;
-            margin-bottom: 1rem;
-            padding-bottom: 0.6rem;
-            border-bottom: 3px solid #f39c12;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 4px solid #f39c12;
             display: inline-block;
         }
 
         .modal-text {
-            line-height: 1.8;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 1.5rem 0;
+            line-height: 2;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.92);
+            margin: 2rem 0;
             white-space: pre-wrap;
             word-break: break-word;
             background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 20px;
+            padding: 2rem;
+            border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .modal-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             justify-content: center;
         }
 
         .btn-share {
-            min-width: 160px;
-            padding: 0.8rem 2rem;
+            min-width: 200px;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 60px;
             font-family: 'Cairo', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             transition: all 0.3s;
             background: #2980b9;
             color: white;
@@ -356,14 +361,16 @@
         }
 
         @media (max-width: 600px) {
-            .header h1 { font-size: 1.3rem; }
-            .cards-grid { gap: 1rem; grid-template-columns: 1fr; }
-            .modal-title { font-size: 1.3rem; }
-            .modal-text { font-size: 0.85rem; padding: 1rem; }
-            .btn-icon { font-size: 0.7rem; }
-            .nav-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
-            .section-title { font-size: 1.3rem; }
-            .btn-share { min-width: 130px; padding: 0.7rem 1.5rem; font-size: 0.9rem; }
+            body { font-size: 16px; }
+            .header h1 { font-size: 1.6rem; }
+            .cards-grid { gap: 1.2rem; grid-template-columns: 1fr; }
+            .modal-title { font-size: 1.5rem; }
+            .modal-text { font-size: 1rem; padding: 1.2rem; }
+            .btn-icon { font-size: 0.85rem; }
+            .nav-btn { padding: 0.7rem 1.5rem; font-size: 0.95rem; }
+            .section-title { font-size: 1.5rem; }
+            .card-header h3 { font-size: 1.2rem; }
+            .btn-share { min-width: 160px; padding: 0.8rem 1.5rem; font-size: 1rem; }
         }
     </style>
 </head>
@@ -452,12 +459,12 @@
             card.className = 'card';
             card.style.animationDelay = `${index * 0.05}s`;
             card.setAttribute('data-id', topic.id);
-            let shortContent = topic.content.substring(0, 100) + (topic.content.length > 100 ? '...' : '');
+            let shortContent = topic.content.substring(0, 120) + (topic.content.length > 120 ? '...' : '');
             card.innerHTML = `
                 <div class="card-header">
                     <i class="fas fa-scroll"></i>
                     <h3>${escapeHtml(topic.title)}</h3>
-                    <div class="topic-number">${topic.id}</div>
+                    <div class="topic-number">الموضوع ${topic.id}</div>
                 </div>
                 <div class="card-body">
                     <p>${escapeHtml(shortContent)}</p>
