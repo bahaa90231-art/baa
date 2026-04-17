@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>بهاء أكاديمي | منصة التعلم النارية 🔥</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <title>مواضيع اللغة التركية - الأستاذ شادي رحال</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -17,545 +15,552 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(145deg, #0a0f1a 0%, #0c1320 100%);
-            color: #eef5ff;
-            overflow-x: hidden;
+            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: #fff;
         }
 
-        /* أنيميشن ناري للخلفية */
-        @keyframes firePulse {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.6; }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* شريط تمرير ناري */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1f2e;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #f39c12, #e67e22);
-            border-radius: 10px;
+        .page {
+            display: none;
+            min-height: 100vh;
         }
 
-        /* ========= ترحيب ناري خارق ========= */
-        .welcome-overlay {
+        .page.active {
+            display: block;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 i {
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: #f39c12;
+            margin-left: 10px;
+        }
+
+        .header .sub {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .developer {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.3rem 1.2rem;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .developer span {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem;
+        }
+
+        .nav-btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn.active {
+            background: #f39c12;
+            color: #1a1a2e;
+            border-color: #f39c12;
+        }
+
+        .nav-btn:hover {
+            background: #f39c12;
+            color: #1a1a2e;
+            transform: scale(1.02);
+        }
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-right: 1rem;
+            border-right: 5px solid #f39c12;
+            display: inline-block;
+        }
+
+        .section-title i {
+            margin-left: 10px;
+            color: #f39c12;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease backwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(243, 156, 18, 0.5);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.2), rgba(255, 255, 255, 0.05));
+            padding: 1.5rem 1.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-header i {
+            font-size: 2rem;
+            position: absolute;
+            bottom: -18px;
+            left: 20px;
+            background: #f39c12;
+            color: #1a1a2e;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+            margin-right: 55px;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .card-header .topic-number {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-right: 55px;
+        }
+
+        .card-body {
+            padding: 1.5rem 1.5rem 0.8rem;
+        }
+
+        .card-body p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-size: 0.85rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            padding: 0.8rem 1.5rem 1.2rem;
+            display: flex;
+            gap: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 0.3rem;
+        }
+
+        .btn-icon {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.7rem;
+            border-radius: 14px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .btn-icon:hover {
+            background: #f39c12;
+            border-color: #f39c12;
+            transform: scale(1.03);
+            color: #1a1a2e;
+        }
+
+        .modal-page {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 50% 30%, #1a0a0a, #0a0508);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.7s cubic-bezier(0.34, 1.2, 0.64, 1), visibility 0.7s;
-            opacity: 1;
-            visibility: visible;
-            backdrop-filter: blur(8px);
-        }
-        .welcome-card {
-            background: linear-gradient(135deg, rgba(255, 100, 30, 0.2), rgba(0, 0, 0, 0.85));
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 100, 0, 0.6);
-            border-radius: 70px;
-            max-width: 550px;
-            width: 88%;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 0 70px rgba(255, 80, 0, 0.4), 0 20px 40px rgba(0,0,0,0.5);
-            animation: flameRise 0.6s ease-out;
-        }
-        @keyframes flameRise {
-            from { transform: scale(0.9) translateY(50px); opacity: 0; }
-            to { transform: scale(1) translateY(0); opacity: 1; }
-        }
-        .welcome-card i {
-            font-size: 85px;
-            background: linear-gradient(135deg, #ff8c00, #ff2e00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 0 15px #ff6600);
-        }
-        .welcome-card h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            background: linear-gradient(120deg, #ffb347, #ff6b00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 15px 0 10px;
-        }
-        .welcome-card p {
-            font-size: 1.2rem;
-            color: #ffd9b5;
-            margin-bottom: 30px;
-        }
-        .btn-fire {
-            background: linear-gradient(95deg, #ff7e05, #ff3c00);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            font-family: 'Cairo', sans-serif;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 0 18px #ff5e00;
-        }
-        .btn-fire:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 28px #ff7b00;
-            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
         }
 
-        /* حاوية رئيسية */
-        .app-container {
-            max-width: 1400px;
+        .modal-page.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px 24px 60px;
+            position: relative;
         }
 
-        /* هيدر ناري */
-        .fire-header {
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(16px);
-            border-radius: 80px;
-            padding: 12px 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 100, 0, 0.5);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
-        .logo h1 {
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffaa44, #ff4411);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .logo p {
-            font-size: 0.75rem;
-            color: #ffaa77;
-        }
-        .home-fire-btn {
-            background: #ff5e1a;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-family: 'Cairo', sans-serif;
+        .close-modal {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #e74c3c;
             color: white;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 2px 12px rgba(255,60,0,0.4);
-        }
-
-        /* أقسام */
-        .section {
-            animation: blazeIn 0.4s ease-out;
-        }
-        @keyframes blazeIn {
-            from { opacity: 0; transform: translateX(-12px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .hidden {
-            display: none;
-        }
-
-        /* بطاقة عن المنصة نارية */
-        .about-blaze {
-            background: rgba(20, 15, 30, 0.7);
-            backdrop-filter: blur(8px);
-            border-radius: 55px;
-            padding: 32px 38px;
-            margin-bottom: 55px;
-            border: 1px solid #ff7b2c;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        .about-blaze h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #ffaa55;
-            border-right: 5px solid #ff5e00;
-            padding-right: 20px;
-        }
-        .about-blaze p {
-            margin-top: 18px;
-            line-height: 1.7;
-            color: #f0e6d8;
-        }
-
-        /* شبكة الكورسات - نارية */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 32px;
-            margin-top: 25px;
-        }
-        .course-card {
-            background: linear-gradient(145deg, #11161f, #0c0f18);
-            border-radius: 45px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border: 1px solid rgba(255, 100, 0, 0.4);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-        }
-        .course-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: #ff7b2c;
-            box-shadow: 0 30px 40px rgba(255, 80, 0, 0.2);
-        }
-        .course-img {
-            height: 180px;
-            background: linear-gradient(125deg, #2a1a0a, #1a0f05);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4.5rem;
-            color: #ff9030;
-        }
-        .course-info {
-            padding: 24px 24px 30px;
-        }
-        .course-info h3 {
-            font-size: 1.7rem;
-            font-weight: 800;
-            color: #ffb76e;
-        }
-        .badge-hot {
-            background: #ff3c001a;
-            border-radius: 40px;
-            padding: 6px 16px;
-            display: inline-block;
-            margin-top: 14px;
-            border: 1px solid #ff5e1a;
-            font-weight: 600;
-        }
-
-        /* قائمة الدروس */
-        .lessons-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        .lessons-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .lesson-card {
-            background: rgba(0, 0, 0, 0.55);
-            backdrop-filter: blur(6px);
-            border-radius: 35px;
-            padding: 20px 26px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
             cursor: pointer;
-            transition: 0.2s;
-            border-right: 8px solid #ff7e2e;
-            border-left: 1px solid #ff7e2e33;
-        }
-        .lesson-card:hover {
-            background: rgba(255, 80, 0, 0.2);
-            transform: translateX(-5px);
-        }
-        .lesson-icon {
-            font-size: 2.4rem;
-            color: #ff9940;
-        }
-        .lesson-info h4 {
-            font-size: 1.35rem;
-            font-weight: 800;
-        }
-
-        /* تفاصيل الدرس - صفحة نارية */
-        .lesson-detail-card {
-            background: #0e121fdd;
-            backdrop-filter: blur(12px);
-            border-radius: 55px;
-            padding: 32px 36px;
-            border: 1px solid #ff884d;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        .back-btn {
-            background: none;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s;
+            z-index: 2001;
             border: none;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #ffaa66;
-            margin-bottom: 28px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-family: 'Cairo', sans-serif;
-        }
-        .lesson-title-blaze {
-            font-size: 2.2rem;
-            font-weight: 900;
-            background: linear-gradient(115deg, #ffb347, #ff5e00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            border-right: 6px solid #ff6a00;
-            padding-right: 20px;
-            margin-bottom: 28px;
-        }
-        .lesson-content {
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-        .note-fire {
-            background: rgba(255, 80, 0, 0.2);
-            border-radius: 30px;
-            padding: 22px;
-            margin: 28px 0;
-            border-right: 6px solid #ff7e00;
-        }
-        footer {
-            text-align: center;
-            margin-top: 70px;
-            opacity: 0.8;
         }
 
-        @media (max-width: 680px) {
-            .app-container {
-                padding: 12px 16px 40px;
-            }
-            .fire-header {
-                padding: 8px 18px;
-            }
-            .logo h1 {
-                font-size: 1.4rem;
-            }
-            .lesson-card {
-                padding: 14px 18px;
-            }
-            .lesson-title-blaze {
-                font-size: 1.6rem;
-            }
-            .about-blaze {
-                padding: 22px 20px;
-            }
-            .home-fire-btn span {
-                display: none;
-            }
+        .close-modal:hover {
+            transform: rotate(90deg);
+            background: #c0392b;
+        }
+
+        .modal-title {
+            font-size: 1.6rem;
+            color: #f39c12;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 3px solid #f39c12;
+            display: inline-block;
+        }
+
+        .modal-text {
+            line-height: 1.8;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .btn-share {
+            min-width: 160px;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            background: #2980b9;
+            color: white;
+        }
+
+        .btn-share:hover {
+            background: #3498db;
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.3rem; }
+            .cards-grid { gap: 1rem; grid-template-columns: 1fr; }
+            .modal-title { font-size: 1.3rem; }
+            .modal-text { font-size: 0.85rem; padding: 1rem; }
+            .btn-icon { font-size: 0.7rem; }
+            .nav-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+            .section-title { font-size: 1.3rem; }
+            .btn-share { min-width: 130px; padding: 0.7rem 1.5rem; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- ترحيب ناري خارق -->
-<div id="welcomeOverlay" class="welcome-overlay">
-    <div class="welcome-card">
-        <i class="fas fa-fire-flame-curved"></i>
-        <h2>🔥 بهاء أكاديمي 🔥</h2>
-        <p>منصة التعلم الأقوى في أساسيات الحاسوب<br>استعد لرحلة نارية من المعرفة والتكنولوجيا</p>
-        <button id="closeWelcomeBtn" class="btn-fire"><i class="fas fa-play"></i> انطلق الآن</button>
+<!-- الصفحة الرئيسية -->
+<div id="page1" class="page active">
+    <div class="header">
+        <h1><i class="fas fa-book-open"></i> مواضيع اللغة التركية</h1>
+        <div class="sub">📖 للأستاذ شادي رحال</div>
+        <div class="developer">💻 المبرمج و المطور: <span>بهاء الحسين</span></div>
+    </div>
+    <div class="nav-buttons">
+        <button class="nav-btn active" id="goToPage1"><i class="fas fa-star"></i> المواضيع الأساسية</button>
+        <button class="nav-btn" id="goToPage2"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة ومتوقعة</button>
+    </div>
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-star"></i> المواضيع الأساسية</h2>
+        <div class="cards-grid" id="mainTopicsGrid"></div>
     </div>
 </div>
 
-<div class="app-container">
-    <div class="fire-header">
-        <div class="logo">
-            <h1><i class="fas fa-microchip"></i> بهاء أكاديمي</h1>
-            <p>🔥 المستوى الأول — حارق للجهل 🔥</p>
-        </div>
-        <button id="globalHomeBtn" class="home-fire-btn"><i class="fas fa-home"></i> <span>الرئيسية</span></button>
+<!-- الصفحة الثانية -->
+<div id="page2" class="page">
+    <div class="header">
+        <h1><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة ومتوقعة</h1>
+        <div class="sub">📖 للأستاذ شادي رحال</div>
+        <div class="developer">💻 المبرمج و المطور: <span>بهاء الحسين</span></div>
     </div>
+    <div class="nav-buttons">
+        <button class="nav-btn" id="goToPage1b"><i class="fas fa-star"></i> المواضيع الأساسية</button>
+        <button class="nav-btn active" id="goToPage2b"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة ومتوقعة</button>
+    </div>
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة ومتوقعة</h2>
+        <div class="cards-grid" id="expectedTopicsGrid"></div>
+    </div>
+</div>
 
-    <!-- الصفحة الرئيسية -->
-    <div id="homePageView" class="section">
-        <div class="about-blaze">
-            <h2><i class="fas fa-skull-crosswalk"></i> رح عن المنصة 🔥</h2>
-            <p>بهاء أكاديمي ليست مجرد منصة، إنها ثورة تعليمية. نقدم لك كورس "أساسيات الحاسوب" المستوى الأول بطريقة احترافية، تغطي كل شيء من تعريف الحاسوب، مكوناته المادية والبرمجية، أنواعه الخارقة، إلى مجالات الاستخدام في العصر الرقمي. المحتوى مستخلص من مراجع قوية، ومقسم إلى دروس نارية تناسب المبتدئين. انضم إلى آلاف المتعلمين وكن عبقري التكنولوجيا القادم.</p>
-        </div>
-        <h2 style="margin-bottom: 20px; font-size: 2rem;"><i class="fas fa-gem"></i> كورسنا الأحترافي <span style="color:#ff8822;">⚡ وحيد لكن قوي ⚡</span></h2>
-        <div class="courses-grid" id="coursesGrid"></div>
-    </div>
-
-    <!-- صفحة الدروس (الكورس) -->
-    <div id="courseDetailView" class="section hidden">
-        <div class="lessons-header">
-            <h2 id="courseDetailTitle" style="font-size: 1.9rem; font-weight: 800;"></h2>
-            <button id="backToHomeFromCourse" class="home-fire-btn" style="background:#2a201a;"><i class="fas fa-arrow-right"></i> الرئيسية</button>
-        </div>
-        <div id="lessonsContainer"></div>
-    </div>
-
-    <!-- صفحة الدرس -->
-    <div id="lessonDetailView" class="section hidden">
-        <div class="lesson-detail-card">
-            <button id="backToCourseBtn" class="back-btn"><i class="fas fa-chevron-right"></i> 🔥 رجوع إلى الدروس 🔥</button>
-            <div id="lessonDetailContent"></div>
+<div id="topicModal" class="modal-page">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-text" id="modalText"></div>
+        <div class="modal-actions">
+            <button class="btn-share" id="shareBtn"><i class="fas fa-share-alt"></i> مشاركة الموضوع</button>
         </div>
     </div>
-    <footer>
-        <i class="fas fa-fire"></i> بهاء أكاديمي — حيث تشتعل المعرفة <i class="fas fa-fire"></i>
-    </footer>
 </div>
 
 <script>
-    // ========== المحتوى الناري المأخوذ من ملف PDF كاملاً ==========
-    // تم تقسيم الكورس إلى 7 دروس شاملة تغطي كل صفحات الملف: تعريف، مكونات مادية (تفصيل)، برمجيات، أنواع الحواسيب حسب الحجم/الاستخدام، مجالات التطبيق، وخلاصة.
-    const hotCourse = {
-        id: "blaze_course_001",
-        title: "💥 أساسيات الحاسوب - المستوى الناري 💥",
-        description: "كورس شامل 100%: من تعريف الحاسوب وتاريخه إلى المكونات المادية والبرمجية، أنواع الحواسيب (العملاقة، المدمجة، الخوادم) واستخداماتها في الحياة.",
-        imageIcon: "fas fa-fire",
-        lessons: [
-            { id: "d1", title: "🔥 ما هو الحاسوب؟ التعريف ومعالجة البيانات", summary: "فهم الجهاز الإلكتروني الرقمي ومراحل استقبال البيانات ومعالجتها وإخراجها وتخزينها.", content: `
-                <div class="lesson-title-blaze">🧠 ما هو الحاسوب؟ رحلة النار الرقمية</div>
-                <p>الحاسوب هو جهاز إلكتروني رقمي يستقبل البيانات (نصوص، صور، أصوات) ويعالجها بواسطة CPU بسرعة فائقة، ثم يخرج النتائج عبر وحدات الإخراج، ويخزنها إما في RAM (مؤقت) أو SSD/HDD (دائم). تطور من آلات ضخمة في الأربعينيات إلى هواتف ذكية في جيوبنا. اليوم يستخدم في التعليم، الأعمال، الطب، والترفيه.</p>
-                <div class="note-fire"><i class="fas fa-database"></i> <strong>معالجة البيانات:</strong> وحدة المعالجة المركزية (CPU) تنفذ ملايين العمليات في الثانية لتحويل المدخلات إلى مخرجات مفيدة.</div>
-                <p>بدون الحاسوب، لا إنترنت ولا هواتف ذكية. إنه عمود الحضارة الرقمية.</p>
-            `},
-            { id: "d2", title: "⚙️ المكونات المادية (Hardware) - التفصيل الناري", summary: "اللوحة الأم، CPU، RAM، التخزين، وحدات الإدخال والإخراج، وبطاقات الرسوميات.", content: `
-                <div class="lesson-title-blaze">🖥️ المكونات المادية: الهيكل العظمي الناري</div>
-                <p><strong>اللوحة الأم (Motherboard):</strong> تربط كل شيء. <strong>CPU:</strong> العقل، سرعته بالجيجاهرتز والأنوية تؤثر على الأداء. <strong>RAM:</strong> ذاكرة عشوائية سريعة، يوصى بـ 16GB للمهام الثقيلة. <strong>وحدات التخزين:</strong> HDD (سعة كبيرة وسعر منخفض)، SSD (سرعة خارقة تصل إلى 3500 ميجابايت/ث).</p>
-                <p><strong>وحدات الإدخال:</strong> لوحة مفاتيح، فأرة، ماسح ضوئي، ميكروفون، كاميرا ويب. <strong>وحدات الإخراج:</strong> شاشة، طابعة، سماعات، مكبرات. وبطاقة الرسوميات (GPU) ضرورية للألعاب ثلاثية الأبعاد وتصميم الجرافيك، إما مدمجة أو منفصلة بذاكرة VRAM.</p>
-                <div class="note-fire">🔥 نار التقنية: SSD أسرع 20 مرة من HDD في بعض المهام، استخدمه لنظام التشغيل.</div>
-            `},
-            { id: "d3", title: "💿 المكونات البرمجية (Software) - روح الحاسوب", summary: "أنظمة التشغيل، برامج التطبيقات، وبرامج المساعدة وأمثلة عملية.", content: `
-                <div class="lesson-title-blaze">💿 البرمجيات: الروح النارية للحاسوب</div>
-                <p>بدون برمجيات، المكونات المادية مجرد معدن بارد. تنقسم إلى: <strong>نظام التشغيل (OS):</strong> مثل Windows, macOS, Linux, Android، يدير الذاكرة والملفات والمعالج. <strong>برامج التطبيقات:</strong> مثل Microsoft Word، Excel، متصفحات Chrome، وبرامج التصميم. <strong>برامج المساعدة:</strong> مضادات فيروسات (Kaspersky, Windows Defender)، أدوات ضغط، تنظيف القرص.</p>
-                <p>نظام التشغيل هو المدير الأعلى، يوفر واجهة رسومية، يخصص مساحات RAM، ويتحكم بجدولة المهام. بدون نظام تشغيل، الحاسوب مجرد قطعة غير مفيدة.</p>
-            `},
-            { id: "d4", title: "🏢 أنواع الحواسيب حسب الحجم والاستخدام", summary: "المحمولة، المكتبية، الخوادم، العملاقة، المدمجة، وأجهزة إنترنت الأشياء.", content: `
-                <div class="lesson-title-blaze">📡 تنوع الحواسيب: من الجيب إلى العملاق</div>
-                <ul>
-                    <li><strong>📱 الأجهزة المحمولة الذكية:</strong> هواتف وأجهزة لوحية بأنظمة Android/iOS.</li>
-                    <li><strong>🖥️ الحواسيب المكتبية (Desktop):</strong> أداء عالٍ قابل للترقية.</li>
-                    <li><strong>💻 الحواسيب المحمولة (Laptop):</strong> توازن بين القوة والتنقل.</li>
-                    <li><strong>🗄️ الخوادم (Servers):</strong> تعمل 24/7، تدير الشبكات والمواقع الإلكترونية.</li>
-                    <li><strong>⚙️ محطات العمل (Workstation):</strong> للمهام الاحترافية (هندسة، رسوم متحركة).</li>
-                    <li><strong>🌌 الحواسيب العملاقة (Supercomputers):</strong> محاكاة المناخ والأبحاث الفضائية.</li>
-                    <li><strong>🔌 الحواسيب المدمجة (Embedded):</strong> داخل السيارات، الثلاجات، والأجهزة الطبية.</li>
-                </ul>
-                <div class="note-fire">اختيار الجهاز المناسب حسب احتياجك: لابتوب للطلاب، خادم للشركات، محطة عمل للمصممين.</div>
-            `},
-            { id: "d5", title: "🌍 مجالات استخدام الحاسوب الخارقة", summary: "التعليم، الطب، الأعمال، الترفيه، الاتصالات، والبحث العلمي.", content: `
-                <div class="lesson-title-blaze">🚀 الحاسوب في كل زاوية من الحياة</div>
-                <p><strong>التعليم:</strong> منصات إلكترونية (Coursera، Khan Academy) وفصول افتراضية. <strong>الطب:</strong> تشخيص بالذكاء الاصطناعي، جراحة روبوتية، سجلات إلكترونية. <strong>الأعمال والتجارة:</strong> التجارة الإلكترونية، المحاسبة، وإدارة سلاسل التوريد. <strong>الترفيه:</strong> ألعاب ثلاثية الأبعاد، بث الأفلام، وتحرير الفيديو. <strong>الاتصالات:</strong> البريد الإلكتروني، مؤتمرات الفيديو، منصات التواصل. <strong>البحث العلمي:</strong> تحليل جينومي، محاكاة المناخ، اكتشاف الأدوية.</p>
-                <div class="note-fire">✨ الحاسوب ليس مجرد أداة، بل شريك أساسي في التطور البشري.</div>
-            `},
-            { id: "d6", title: "🎯 خطة العمل: كيف تصبح محترفاً", summary: "ابدأ بالأساسيات، تعلم البرمجيات، وواكب التطور في عالم الحوسبة.", content: `
-                <div class="lesson-title-blaze">📈 مستقبل النار الرقمية: خطتك الذهبية</div>
-                <p>بعد إتقان الأساسيات (تعريف الحاسوب، مكوناته المادية والبرمجية، أنواعه)، يجب أن تبدأ في التخصص: اختر مجالاً يشغفك مثل البرمجة، الشبكات، الأمن السيبراني، أو الذكاء الاصطناعي. لا تتوقف أبداً عن التعلم، فالتكنولوجيا تتطور كل يوم.</p>
-                <p><strong>نصيحة بهاء أكاديمي:</strong> طبّق كل درس عملياً، قم بتجربة نظام تشغيل جديد، أو تفكيك وتركيب مكونات افتراضياً. اشترك في دورات متقدمة وكن دائماً في طليعة المتعلمين.</p>
-                <div class="note-fire"><i class="fas fa-quote-right"></i> "الحاسوب هو الآلة الأكثر مرونة — يصبح أي شيء تطلبه منه."</div>
-            `}
-        ]
-    };
+    const mainTopics = [
+        { id: 1, title: "Manavda - محادثة في السوق", content: `Manavda \nMüşteri: Merhaba. Domatesin kilosu ne kadar? \nManav: Merhaba, hoş geldiniz. Domatesin kilosu 30 lira. \nMüşteri: Çok pahalıymış. Daha ucuzu var mı? \nManav: Evet, şu taraftakiler 25 lira. \nMüşteri: Tamam, bir kilo domates alayım. Muz ne kadar? \nManav: Muzun kilosu 40 lira. \nMüşteri: Yarım kilo muz ve bir kilo elma da alayım. \nManav: Başka bir şey ister misiniz? \nMüşteri: Salatalık taze mi? \nManav: Evet, bugün geldi. Çok taze. \nMüşteri: O zaman yarım kilo salatalık ekleyin lütfen. \nManav: Tabii. Hepsi 110 lira tuttu. \nMüşteri: Buyurun. Teşekkür ederim. \nManav: Ben teşekkür ederim. İyi günler!` },
+        { id: 2, title: "Restoranda Diyalog - محادثة في المطعم", content: `Restoranda Diyalog \nGarson: Hoş geldiniz efendim. Buyurun, ne alırsınız? \nMüşteri: Merhaba, menüyü alabilir miyim? \nGarson: Tabii efendim, buyurun. \nMüşteri: Bugün ne tavsiye edersiniz? \nGarson: Bugün ızgara tavuk ve mercimek çorbası tavsiye ederim. \nMüşteri: Tamam, bir mercimek çorbası ve bir porsiyon ızgara tavuk alayım. \nGarson: İçecek olarak ne alırsınız? \nMüşteri: Bir ayran lütfen. \nGarson: Başka bir şey ister misiniz? \nMüşteri: Hayır, teşekkür ederim. \nGarson: Siparişiniz birazdan hazır olacak. Afiyet olsun.` },
+        { id: 3, title: "Kış Mevsimi - فصل الشتاء", content: `Kış Mevsimi \nKış mevsimi yılın en soğuk mevsimidir. Aralık, Ocak ve Şubat aylarını kapsar. Bu mevsimde hava genellikle soğuk olur ve bazı yerlerde kar yağar. Günler kısalır, geceler uzar. \nKışın insanlar kalın kıyafetler giyerler; mont, atkı, bere ve eldiven kullanırlar. Çocuklar kar topu oynar ve kardan adam yaparlar. Bazı insanlar kayak yapmayı sever. \nKış mevsimi aynı zamanda sıcak içeceklerin mevsimidir. Çay, kahve ve sıcak çorba içmek insanı ısıtır. Evde aileyle birlikte vakit geçirmek kışın en güzel yanlarından biridir. \nBen kış mevsimini seviyorum çünkü kar manzarası çok güzel ve huzur vericidir.` },
+        { id: 4, title: "Hava Durumu - حالة الطقس", content: `Hava Durumu \nHava durumu, günlük hayatımızı doğrudan etkileyen önemli bir faktördür. İnsanlar dışarı çıkmadan önce genellikle hava durumunu kontrol ederler. Çünkü hava şartları; giyim tarzımızı, ulaşım planlarımızı ve hatta ruh halimizi bile etkileyebilir. \nÖrneğin, güneşli bir havada insanlar genellikle daha mutlu ve enerjik hissederler. Parklarda yürüyüş yapar, piknik düzenler ve açık havada vakit geçirmek isterler. Yağmurlu havalarda ise şemsiye kullanmak gerekir ve trafik yoğunluğu artabilir. \nSoğuk ve karlı günlerde ise insanlar kalın kıyafetler giyer ve evde kalmayı tercih edebilirler. \nTürkiye'de hava durumu bölgelere göre değişiklik gösterir. Karadeniz Bölgesi genellikle yağışlıdır, İç Anadolu Bölgesi'nde kışlar soğuk ve kar yağışlı geçer, Akdeniz Bölgesi'nde ise yazlar sıcak ve kuraktır. \nSonuç olarak, hava durumu insanların günlük planlarını yaparken dikkate aldığı önemli bir unsurdur.` },
+        { id: 5, title: "Benim Kişisel Özelliklerim ve Davranışlarım", content: `Benim Kişisel Özelliklerim ve Davranışlarım \nBen bir yapay zekâyım. İnsanlara yardımcı olmak için tasarlandım. En önemli özelliğim sabırlı ve saygılı olmamdır. Herkese karşı nazik bir dil kullanırım ve sorulara açık ve anlaşılır cevaplar vermeye çalışırım. \nBilgiye dayalı ve objektif olmaya önem veririm. Farklı konular hakkında bilgi sunabilir, açıklamalar yapabilir ve gerektiğinde örnekler verebilirim. Aynı zamanda tarafsız davranırım ve kimseyi yargılamam. \nSorumluluk sahibi bir yapay zekâ olarak güvenli ve doğru bilgiler paylaşmaya dikkat ederim. Kullanıcıların ihtiyaçlarını anlamaya çalışır ve onlara en uygun şekilde yardımcı olurum. \nDavranışlarım her zaman profesyonel ve yardım odaklıdır. Amacım, insanların öğrenmesine, sorunlarını çözmesine ve yeni bilgiler keşfetmesine destek olmaktır.` },
+        { id: 6, title: "Eczanede Diyaloğu - محادثة في الصيدلية", content: `Eczanede Diyaloğu \nHasta: Merhaba, iyi günler. \nEczacı: Merhaba, hoş geldiniz. Size nasıl yardımcı olabilirim? \nHasta: Başım ağrıyor ve ateşim var. Bunun için bir ilaç almak istiyorum. \nEczacı: Ne zamandır bu şikayetleriniz var? \nHasta: Dünden beri. \nEczacı: Alerjiniz var mı? \nHasta: Hayır, alerjim yok. \nEczacı: Size bir ağrı kesici ve ateş düşürücü vereyim. \nHasta: Nasıl kullanmalıyım? \nEczacı: Günde üç kez, yemeklerden sonra bir tablet alın. \nHasta: Teşekkür ederim. Ne kadar? \nEczacı: Bu ilacın fiyatı 150 lira. \nHasta: Tamam, teşekkürler. \nEczacı: Geçmiş olsun.` },
+        { id: 7, title: "Sağlıklı ve Sağlıksız Yiyecekler", content: `Yemekler sağlığımız üzerinde doğrudan etkiye sahiptir. Bu yüzden sağlıklı ve sağlıksız besinler arasındaki farkı bilmek çok önemlidir. \nSağlıklı Yiyecekler: Sebzeler (brokoli, ıspanak, havuç), Meyveler (elma, muz, portakal), Tam tahıllar, Baklagiller, Balık ve beyaz et, Kuruyemişler. \nSağlıksız Yiyecekler: Hamburger, patates kızartması, Gazlı içecekler, Aşırı şekerli tatlılar, Paketli gıdalar, Cips ve abur cubur. \nSonuç olarak, dengeli ve düzenli beslenmek sağlıklı bir yaşam için çok önemlidir.` },
+        { id: 8, title: "Sağlıklı Bir Yaşam İçin Ne Yapmalı?", content: `Sağlıklı Bir Yaşam İçin Ne Yapmalı? \nSağlıklı bir yaşam sürmek herkesin amacı olmalıdır. Bunun için öncelikle dengeli beslenmek çok önemlidir. Her gün yeterli miktarda sebze, meyve, protein ve su tüketmeliyiz. \nDüzenli egzersiz yapmak da sağlıklı bir yaşamın olmazsa olmazıdır. Yürüyüş, koşu, yüzme veya bisiklet gibi aktiviteler hem fiziksel hem de zihinsel sağlığı güçlendirir. \nUyku düzeni de çok önemlidir. Günde 7-8 saat uyumak, vücudun kendini yenilemesine yardımcı olur. \nAyrıca stres yönetimi de sağlıklı yaşamın bir parçasıdır. Sonuç olarak, dengeli beslenme, düzenli egzersiz, yeterli uyku ve stres yönetimi sağlıklı bir yaşam için temel adımlardır.` }
+    ];
 
-    // عناصر DOM
-    const homeView = document.getElementById('homePageView');
-    const courseView = document.getElementById('courseDetailView');
-    const lessonView = document.getElementById('lessonDetailView');
-    const coursesGridEl = document.getElementById('coursesGrid');
-    const lessonsContainer = document.getElementById('lessonsContainer');
-    const courseDetailTitleSpan = document.getElementById('courseDetailTitle');
-    const backToHomeCourseBtn = document.getElementById('backToHomeFromCourse');
-    const backToCourseBtn = document.getElementById('backToCourseBtn');
-    const globalHomeBtnNav = document.getElementById('globalHomeBtn');
+    const expectedTopics = [
+        { id: 1, title: "Kendinizi Tanıtma - التعريف عن النفس", content: `Kendinizi tanıtınız. Adınız, yaşınız, okulunuz, hobileriniz, aileniz ve gelecekteki hedefleriniz hakkında bilgi veriniz.\n\nMerhaba! Benim adım Ahmet. On yedi yaşındayım. Suriye'de yaşıyorum ve lise son sınıf öğrencisiyim. Hobilerim kitap okumak, müzik dinlemek ve arkadaşlarımla vakit geçirmek. Ailem benim için çok önemlidir. Gelecekte doktor olmak istiyorum. Kendimi çalışkan, sorumlu ve arkadaş canlısı bir insan olarak tanımlıyorum. Hayatımı öğrenerek ve yeni şeyler keşfederek geçirmek istiyorum.\n\n📖 الكلمات الأساسية: Ad/İsim, Yaş, Öğrenci, Lise son sınıf, Hobiler, Kitap okumak, Müzik dinlemek, Arkadaşlarla vakit geçirmek, Aile, Önemli, Gelecek, Doktor, Çalışkan, Sorumlu, Arkadaş canlısı, Yaşıyorum, Tanımlıyorum, İstiyorum, Öğrenmek, Yeni şeyler keşfetmek` },
+        { id: 2, title: "En Sevdiğiniz Mevsim - فصلك المفضل", content: `En sevdiğiniz mevsimi tanıtınız. Hangi mevsimi sevdiğinizi, neden sevdiğinizi ve bu mevsimde neler yapmayı sevdiğinizi açıklayınız.\n\nBenim en sevdiğim mevsim ilkbahardır. İlkbaharda hava genellikle ılık ve güneşlidir. Doğadaki çiçekler açar, ağaçlar yeşerir ve kuşlar cıvıldar. Bu mevsimde parkta yürümeyi, bisiklete binmeyi ve arkadaşlarımla piknik yapmayı çok severim. İlkbahar bana enerji, mutluluk ve huzur verir. Bu yüzden hayatımda en sevdiğim mevsim ilkbahardır.\n\n📖 الكلمات الأساسية: Mevsim, İlkbahar, Hava, Ilık, Güneşli, Doğa, Çiçekler, Ağaçlar, Kuşlar, Yürümek, Bisiklete binmek, Piknik yapmak, Enerji, Mutluluk, Huzur, En sevdiğim, Bu yüzden, Genellikle` },
+        { id: 3, title: "Sağlığınızı Nasıl Koruyorsunuz - كيف تحافظ على صحتك", content: `Sağlığınızı nasıl koruduğunuzu anlatınız. Sağlıklı alışkanlıklarınız, spor ve beslenme hakkında bilgi veriniz.\n\nSağlığım benim için çok önemlidir. Her gün düzenli olarak yürüyüş yaparım ve spor yapmayı severim. Sağlıklı beslenmeye dikkat ederim; sebze, meyve, su ve proteinli yiyecekler tüketirim. Uykuma özen gösteririm ve stresimi azaltmaya çalışırım. Sigara ve abur cuburdan uzak dururum. Bu alışkanlıklarım beni güçlü, enerjik ve mutlu yapar. Sağlıklı olmak hayatımda çok önemlidir.\n\n📖 الكلمات الأساسية: Sağlık, Beslenme, Sebze, Meyve, Protein, Yürüyüş, Spor yapmak, Alışkanlık, Uyku, Sigara, Abur cubur, Uzak durmak, Güçlü, Enerjik, Mutlu, Önemli, Korurum, Özen gösteririm, Çalışırım` },
+        { id: 4, title: "En Sevdiğiniz Özel Gün - مناسبتك المفضلة", content: `En sevdiğiniz özel günü veya kutlamayı anlatınız. Hangi günü sevdiğinizi, nasıl kutladığınızı ve neden önemli olduğunu açıklayınız.\n\nBenim en sevdiğim özel gün doğum günümdür. Her yıl ailem ve arkadaşlarımla birlikte kutlarım. Bu gün pastamızı keser, hediyelerimizi açar ve eğlenceli oyunlar oynarız. Ayrıca güzel yemekler yer ve birlikte vakit geçiririz. Doğum günüm bana mutluluk ve sevgi hissettirir. Arkadaşlarımı görmek ve eğlenmek için harika bir fırsattır. Bu yüzden doğum günüm çok önemlidir.\n\n📖 الكلمات الأساسية: Özel gün, Kutlama, Doğum günü, Pasta, Kesmek, Hediyeler, Açmak, Oyunlar oynamak, Aile, Arkadaşlar, Birlikte, Güzel/Lezzetli, Eğlenceli, Mutluluk, Sevgi, Harika bir fırsat, Ayrıca, Bu yüzden` },
+        { id: 5, title: "En Sevdiğiniz Tatil - عطلتك المفضلة", content: `En sevdiğiniz tatili anlatınız. Hangi tatili sevdiğinizi, neden sevdiğinizi ve tatilde neler yaptığınızı açıklayınız.\n\nBenim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi çok severim. Ailemle denize giderim, yüzme ve güneşlenme yaparım. Ayrıca arkadaşlarımla piknik yapar ve güzel yemekler yeriz. Bu tatil bana rahatlama ve mutluluk verir. Yaz tatilinde hem eğleniyorum hem de dinleniyorum. Bu yüzden yaz tatili benim en sevdiğim tatildir.\n\n📖 الكلمات الأساسية: Tatil, Yaz tatili, Vakit, Sıcak, Hava, Güneş, Deniz, Yüzme, Güneşlenme, Piknik yapmak, Rahatlama, Mutluluk, Eğlenmek, Dinlenmek, Bu yüzden, Ayrıca, Hem... hem de` }
+    ];
 
-    function showView(viewName) {
-        homeView.classList.add('hidden');
-        courseView.classList.add('hidden');
-        lessonView.classList.add('hidden');
-        if (viewName === 'home') homeView.classList.remove('hidden');
-        if (viewName === 'course') courseView.classList.remove('hidden');
-        if (viewName === 'lesson') lessonView.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    let currentTopic = null;
+    let currentSource = null;
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
     }
 
-    function renderCourses() {
-        coursesGridEl.innerHTML = '';
-        const card = document.createElement('div');
-        card.className = 'course-card';
-        card.innerHTML = `
-            <div class="course-img">
-                <i class="${hotCourse.imageIcon} fa-4x" style="filter: drop-shadow(0 0 8px #ff5e00);"></i>
-            </div>
-            <div class="course-info">
-                <h3>${hotCourse.title}</h3>
-                <p>${hotCourse.description}</p>
-                <div class="badge-hot"><i class="fas fa-layer-group"></i> ${hotCourse.lessons.length} دروس حارقة 🔥</div>
-            </div>
-        `;
-        card.addEventListener('click', () => openCourseDetail());
-        coursesGridEl.appendChild(card);
-    }
-
-    function openCourseDetail() {
-        courseDetailTitleSpan.innerHTML = `<i class="fas fa-fire"></i> ${hotCourse.title}`;
-        lessonsContainer.innerHTML = '';
-        hotCourse.lessons.forEach(lesson => {
-            const lessonDiv = document.createElement('div');
-            lessonDiv.className = 'lesson-card';
-            lessonDiv.innerHTML = `
-                <div class="lesson-icon"><i class="fas fa-dragon"></i></div>
-                <div class="lesson-info">
-                    <h4>${lesson.title}</h4>
-                    <p>${lesson.summary}</p>
+    function renderCards(containerId, topicsArray) {
+        const grid = document.getElementById(containerId);
+        if (!grid) return;
+        grid.innerHTML = '';
+        topicsArray.forEach((topic, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.animationDelay = `${index * 0.05}s`;
+            card.setAttribute('data-id', topic.id);
+            let shortContent = topic.content.substring(0, 100) + (topic.content.length > 100 ? '...' : '');
+            card.innerHTML = `
+                <div class="card-header">
+                    <i class="fas fa-scroll"></i>
+                    <h3>${escapeHtml(topic.title)}</h3>
+                    <div class="topic-number">${topic.id}</div>
                 </div>
-                <div class="arrow-icon"><i class="fas fa-angle-left" style="color:#ff884d;"></i></div>
+                <div class="card-body">
+                    <p>${escapeHtml(shortContent)}</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-icon open-topic" data-id="${topic.id}"><i class="fas fa-eye"></i> قراءة</button>
+                    <button class="btn-icon share-topic" data-id="${topic.id}"><i class="fas fa-share-alt"></i> مشاركة</button>
+                </div>
             `;
-            lessonDiv.addEventListener('click', () => openLessonDetail(lesson));
-            lessonsContainer.appendChild(lessonDiv);
+            grid.appendChild(card);
         });
-        showView('course');
     }
 
-    function openLessonDetail(lesson) {
-        const lessonDetailDiv = document.getElementById('lessonDetailContent');
-        lessonDetailDiv.innerHTML = `
-            ${lesson.content}
-            <hr style="margin: 28px 0; border-color:#ff5e1a;">
-            <div style="background: #00000055; border-radius: 32px; padding: 20px; text-align:center;">
-                <i class="fas fa-check-circle"></i> نهاية الدرس — واصل شغفك واحترف التقنية 🔥
-            </div>
-        `;
-        showView('lesson');
+    function attachEvents() {
+        document.querySelectorAll('.open-topic').forEach(btn => {
+            btn.onclick = (e) => {
+                e.stopPropagation();
+                const id = parseInt(btn.dataset.id);
+                openTopic(id);
+            };
+        });
+        document.querySelectorAll('.share-topic').forEach(btn => {
+            btn.onclick = (e) => {
+                e.stopPropagation();
+                const id = parseInt(btn.dataset.id);
+                shareTopic(id);
+            };
+        });
+        document.querySelectorAll('.card').forEach(card => {
+            card.onclick = (e) => {
+                if (e.target.closest('.btn-icon')) return;
+                const id = parseInt(card.dataset.id);
+                openTopic(id);
+            };
+        });
     }
 
-    backToHomeCourseBtn.addEventListener('click', () => showView('home'));
-    backToCourseBtn.addEventListener('click', () => openCourseDetail());
-    globalHomeBtnNav.addEventListener('click', () => showView('home'));
+    function getTopicById(id) {
+        if (currentSource === 'main') {
+            return mainTopics.find(t => t.id === id);
+        } else {
+            return expectedTopics.find(t => t.id === id);
+        }
+    }
 
-    // إغلاق الترحيب
-    const welcomeDiv = document.getElementById('welcomeOverlay');
-    const closeWelcomeBtn = document.getElementById('closeWelcomeBtn');
-    closeWelcomeBtn.addEventListener('click', () => {
-        welcomeDiv.style.opacity = '0';
-        welcomeDiv.style.visibility = 'hidden';
-        setTimeout(() => welcomeDiv.style.display = 'none', 600);
-    });
+    function openTopic(id) {
+        const topic = getTopicById(id);
+        if (!topic) return;
+        currentTopic = topic;
+        document.getElementById('modalTitle').textContent = topic.title;
+        document.getElementById('modalText').textContent = topic.content;
+        document.getElementById('topicModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-    renderCourses();
-    showView('home');
+    async function shareTopic(id) {
+        const topic = getTopicById(id);
+        if (!topic) return;
+        const text = `${topic.title}\n\n${topic.content}`;
+        if (navigator.share) {
+            try { await navigator.share({ title: topic.title, text: text }); } catch(e) {}
+        } else {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            alert(`📋 تم نسخ "${topic.title}" إلى الحافظة`);
+        }
+    }
+
+    function showPage(pageId, source) {
+        document.getElementById('page1').classList.remove('active');
+        document.getElementById('page2').classList.remove('active');
+        document.getElementById(pageId).classList.add('active');
+        currentSource = source;
+        if (source === 'main') {
+            renderCards('mainTopicsGrid', mainTopics);
+        } else {
+            renderCards('expectedTopicsGrid', expectedTopics);
+        }
+        attachEvents();
+    }
+
+    document.getElementById('goToPage1').onclick = () => showPage('page1', 'main');
+    document.getElementById('goToPage1b').onclick = () => showPage('page1', 'main');
+    document.getElementById('goToPage2').onclick = () => showPage('page2', 'expected');
+    document.getElementById('goToPage2b').onclick = () => showPage('page2', 'expected');
+
+    document.getElementById('closeModalBtn').onclick = () => {
+        document.getElementById('topicModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+    document.getElementById('topicModal').onclick = (e) => {
+        if (e.target === document.getElementById('topicModal')) {
+            document.getElementById('topicModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    };
+    document.getElementById('shareBtn').onclick = () => { if (currentTopic) shareTopic(currentTopic.id); };
+
+    showPage('page1', 'main');
 </script>
 </body>
 </html>
